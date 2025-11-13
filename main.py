@@ -1,18 +1,7 @@
-from flask import Flask, request
+from fastapi import FastAPI
 
-data= []
+app = FastAPI()
 
-app = Flask(__name__)
-
-@app.route("/flask_health_check", methods = ["GET"])
-def flask_health_check():
-    return "Flask is running properly"
-
-@app.route("/post_books", methods = ["POST"])
-def post_books():
-    source = request.json
-    data.append(source)
-    return "data successfully added", 201
-
-
-app.run(port=8080,debug=True)
+@app.get("/health_check")
+def health_check():
+    return "FastAPI is running properly"
