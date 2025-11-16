@@ -8,6 +8,7 @@ def health_check():
     return {"message": "FastAPI is running properly"}
 
 
+
 # path parameters
 
 @app.get("/items/{item_id}")
@@ -55,3 +56,4 @@ def temp2(dummy: temp):
     return{
         "my_data": dummy
     }
+
