@@ -20,3 +20,23 @@ def items(item_id:int, item_name:str):
         "item_name":item_name,
         "item_id": item_id
     }
+
+
+#query parameters
+
+@app.get("/query_param1")
+def query_param1(data1: int, data2: str= "Jacob"):
+    return{
+        "return_param1": data1,
+        "return_param2": data2
+    }
+
+# query and path params
+
+
+@app.get("/items2/{item_name2}")
+def items2(item_name2: str, item_price2: float):
+    return {
+        "return_param1": item_name2,
+        "return_param2": item_price2
+    }
